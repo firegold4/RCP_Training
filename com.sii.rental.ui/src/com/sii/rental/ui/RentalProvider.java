@@ -105,6 +105,7 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 		return super.getImage(element);
 	}
 
+	
 	class Node {
 		private static final String LOCATIONS = "Locations";
 		private static final String CUSTOMERS = "Customers";
