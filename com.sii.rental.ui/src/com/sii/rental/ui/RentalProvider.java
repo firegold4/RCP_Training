@@ -2,19 +2,27 @@ package com.sii.rental.ui;
 
 import java.util.Collection;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
+import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 
 import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.RentalObject;
 
-public class RentalProvider extends LabelProvider implements ITreeContentProvider, IColorProvider {
+public class RentalProvider extends LabelProvider implements ITreeContentProvider, IColorProvider, RentalUIConstants {
 
+	@Inject @Named(RENTAL_UI_IMG_REGISTRY)
+	private ImageRegistry registry;
+	
 	@Override
 	public Object[] getElements(Object inputElement) {
 		if (inputElement instanceof Collection<?>) {
@@ -80,12 +88,33 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 	public Color getBackground(Object element) {
 		return null;
 	}
+	
+	@Override
+	public Image getImage(Object element) {
+		if (element instanceof RentalAgency) {
+			return registry.get(IMG_AGENCY);
+		} else if (element instanceof Node) {
+			if (((Node)element).getName() == Node.CUSTOMERS) {
+				return registry.get(IMG_CUSTOMER);
+			} else if (((Node)element).getName() == Node.ALOUER) {
+				return registry.get(IMG_RENTAL);
+			} else if (((Node)element).getName() == Node.LOCATIONS) {
+				return registry.get(IMG_RENTAL_OBJECT);
+			}
+		}
+		return super.getImage(element);
+	}
 
 	class Node {
 		private static final String LOCATIONS = "Locations";
 		private static final String CUSTOMERS = "Customers";
 		private static final String ALOUER = "Objets à louer";
 		private String name;
+		
+		public String getName() {
+			return name;
+		}
+
 		RentalAgency agency;
 
 		public Node(String name, RentalAgency agency) {
