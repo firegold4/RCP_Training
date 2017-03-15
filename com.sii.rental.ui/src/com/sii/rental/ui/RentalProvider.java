@@ -54,8 +54,7 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 	public boolean hasChildren(Object element) {
 		if (element instanceof RentalAgency) {
 			return true;
-		}
-		if (element instanceof Node) {
+		} else if (element instanceof Node) {
 			return ((Node) element).getChildren() != null;
 		}
 		return false;

@@ -7,14 +7,15 @@ import javax.inject.Named;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.services.IServiceConstants;
+import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 
+import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
 
@@ -36,31 +37,40 @@ public class RentalPart {
 				.equalWidth(false) //
 				.create());
 
-		GridData gd = new GridData();
-		gd.grabExcessHorizontalSpace = true;
-		gd.horizontalSpan = 2;
-		gd.horizontalAlignment = SWT.FILL;
+		GridData infoGridData = new GridData();
+		infoGridData.grabExcessHorizontalSpace = true;
+		infoGridData.horizontalSpan = 2;
+		infoGridData.horizontalAlignment = SWT.FILL;
 
 		rentedObjectLabel = new Label(infoGroup, SWT.NONE);
-		rentedObjectLabel.setLayoutData(gd);
+		rentedObjectLabel.setLayoutData(infoGridData);
 
-		GridData gd2 = new GridData();
-		gd2.grabExcessHorizontalSpace = true;
-		gd2.horizontalSpan = 2;
-		gd2.horizontalAlignment = SWT.FILL;
 		customerNameLabel = new Label(infoGroup, SWT.NONE);
-		customerNameLabel.setLayoutData(gd2);
+		customerNameLabel.setLayoutData(infoGridData);
 
 		Group datesGroup = new Group(parent, SWT.NONE);
-		datesGroup.setLayout(new GridLayout(1, false));
-		datesGroup.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false, 1, 1));
+		datesGroup.setLayout(GridLayoutFactory.fillDefaults() //
+				.numColumns(1) //
+				.equalWidth(false) //
+				.create());
+		datesGroup.setLayoutData(GridDataFactory.fillDefaults() //
+				.align(SWT.FILL, SWT.CENTER) //
+				.grab(true, false) //
+				.span(1, 1) //
+				.create());
 		datesGroup.setText("Dates de location");
 
+		GridData dateGridData = GridDataFactory.fillDefaults() //
+				.align(SWT.FILL, SWT.CENTER) //
+				.grab(true, false) //
+				.span(1, 1) //
+				.create();
+
 		fromDateLabel = new Label(datesGroup, SWT.NONE);
-		fromDateLabel.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
+		fromDateLabel.setLayoutData(dateGridData);
 
 		toDateLabel = new Label(datesGroup, SWT.NONE);
-		toDateLabel.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
+		toDateLabel.setLayoutData(dateGridData);
 
 		setRental(agency.getRentals().get(0));
 	}
@@ -84,13 +94,25 @@ public class RentalPart {
 		setRental(rental);
 	}
 
-	//	@Inject
-	//	@Optional
-	//	public void selectCustomers(@Named(IServiceConstants.ACTIVE_SELECTION) Object[] selection) {
-	//		for (Object obj : selection) {
-	//			if (obj instanceof Customer) {
-	//				setCustomer((Customer) obj);
-	//			}
-	//		}
-	//	}
+	@Inject
+	@Optional
+	public void selectCustomers(@Named(IServiceConstants.ACTIVE_SELECTION) Object[] selection) {
+		if (selection != null) {
+			customerNameLabel.setText("Loué à : ");
+			for (Object obj : selection) {
+				if (obj instanceof Customer) {
+					setCustomer((Customer) obj);
+				}
+			}
+		}
+	}
+
+	private void setCustomer(Customer customer) {
+		if (customer != null) {
+			customerNameLabel.setText(customerNameLabel.getText() + customer.getFirstName() + " " + customer.getLastName() + ", ");
+			rentedObjectLabel.setText("");
+			fromDateLabel.setText("Du : ");
+			toDateLabel.setText("Au : ");
+		}
+	}
 }
