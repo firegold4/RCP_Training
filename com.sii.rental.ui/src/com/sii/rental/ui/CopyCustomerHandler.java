@@ -26,8 +26,8 @@ public class CopyCustomerHandler {
 	@Execute
 	public void execute(@Named(IServiceConstants.ACTIVE_SELECTION) Customer customer) {
 		Clipboard clipboard = new Clipboard(Display.getCurrent());
-		String textData = customer.getFirstName() + " " + customer.getLastName();
-		String rtfData = "{\\rtf1\\b\\i " + customer.getFirstName() + customer.getLastName() + "}";
+		String textData = customer.getDisplayName();
+		String rtfData = "{\\rtf1\\b\\i " + customer.getDisplayName() + "}";
 		TextTransfer textTransfer = TextTransfer.getInstance();
 		RTFTransfer rtfTransfer = RTFTransfer.getInstance();
 		Transfer[] transfers = new Transfer[]{textTransfer, rtfTransfer};
