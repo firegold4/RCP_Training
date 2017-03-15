@@ -9,6 +9,7 @@ import javax.inject.Inject;
 
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
+import org.eclipse.e4.core.di.extensions.Preference;
 import org.eclipse.e4.ui.services.EMenuService;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
@@ -19,15 +20,18 @@ import org.eclipse.swt.widgets.Composite;
 
 import com.opcoach.training.rental.RentalAgency;
 import com.sii.rental.ui.RentalProvider;
+import com.sii.rental.ui.RentalUIConstants;
 
-public class RentalAgencies {
+@SuppressWarnings("restriction")
+public class RentalAgencies implements RentalUIConstants{
 
+	private TreeViewer tv;
 	@Inject
 	private ESelectionService selectionService;
 	
 	@PostConstruct
 	public void createContent(Composite parent, RentalAgency agency, IEclipseContext context, EMenuService menuService) {
-		TreeViewer tv = new TreeViewer(parent);
+		tv = new TreeViewer(parent);
 		// RentalProvider provider = new RentalProvider();
 		// A partir du moment où on essaye d'injecter un attribut dans RentalProvider la classe ne peut plus être instanciée avec un new
 		
@@ -48,5 +52,14 @@ public class RentalAgencies {
 			}
 		});
 		menuService.registerContextMenu(tv.getControl(), "com.sii.rental.eap.popupmenu.hellopopup");
+	}
+	
+	@Inject
+	public void refreshTree(@Preference(value = PREF_CUSTOMER_COLOR) String customerColor,
+			@Preference(value = PREF_RENTAL_COLOR) String rentalColor,
+			@Preference(value = PREF_RENTAL_OBJECT_COLOR) String rentalObjectColor) {
+		if (tv != null) {
+			tv.refresh();
+		}
 	}
 }
