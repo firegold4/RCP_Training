@@ -1,9 +1,12 @@
 package com.sii.rental.ui;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 
 import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.e4.core.contexts.IEclipseContext;
+import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.e4.ui.di.UIEventTopic;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
@@ -11,6 +14,7 @@ import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
 
 import com.opcoach.e4.preferences.ScopedPreferenceStore;
+import com.opcoach.training.rental.Customer;
 import com.opcoach.training.rental.RentalAgency;
 import com.sii.rental.core.RentalCoreActivator;
 
@@ -32,5 +36,11 @@ public class RentalAddOn implements RentalUIConstants {
 		reg.put(IMG_RENTAL_OBJECT, ImageDescriptor.createFromURL(bundle.getEntry(IMG_RENTAL_OBJECT)));
 		reg.put(IMG_AGENCY, ImageDescriptor.createFromURL(bundle.getEntry(IMG_AGENCY)));
 		return reg;
+	}
+	
+	@Inject
+	@Optional
+	public void reatOnCopyEvent(@UIEventTopic("copy/customer") Customer customer) {
+		System.out.println("Copie du client " + customer.getDisplayName());
 	}
 }

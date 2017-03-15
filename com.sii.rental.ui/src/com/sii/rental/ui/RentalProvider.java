@@ -126,7 +126,7 @@ public class RentalProvider extends LabelProvider implements ITreeContentProvide
 		}
 		return col;
 	}
-	
+
 	
 	class Node {
 		private static final String LOCATIONS = "Locations";
