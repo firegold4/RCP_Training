@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
+   <extension-point id="palette" name="palette" schema="schema/palette.exsd"/>
 
    <extension
          point="com.opcoach.e4.preferences.e4PreferencePages">
       <page
-            name="Colors"
+            category="com.sii.rental.ui.pagepalette"
             class="com.sii.rental.ui.prefs.RentalColorPage"
-            id="com.sii.rental.ui.pagecolor">
+            id="com.sii.rental.ui.pagecolor"
+            name="Default">
+      </page>
+      <page
+            class="com.sii.rental.ui.prefs.RentalPalettePreferences"
+            id="com.sii.rental.ui.pagepalette"
+            name="Palette">
       </page>
    </extension>
    <extension
@@ -21,6 +28,24 @@
       <fragment
             uri="fragment.e4xmi">
       </fragment>
+   </extension>
+   <extension
+         point="com.sii.rental.ui.palette">
+      <palette
+            id="com.sii.rental.ui.paletteDefault"
+            name="Default"
+            paletteClass="com.sii.rental.ui.palette.DefaultPalette">
+      </palette>
+      <palette
+            id="com.sii.rental.ui.paletteFixe"
+            name="Fixe"
+            paletteClass="com.sii.rental.ui.palette.FixePalette">
+      </palette>
+      <palette
+            id="com.sii.rental.ui.paletteDaltonien"
+            name="Daltonien"
+            paletteClass="com.sii.rental.ui.prefs.DaltonienPalette">
+      </palette>
    </extension>
 
 </plugin>
