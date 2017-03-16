@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <units size='2'>
-  <unit id='com.sii.rental.feature.feature.group' version='1.0.0.201703161541' singleton='false'>
-    <update id='com.sii.rental.feature.feature.group' range='[0.0.0,1.0.0.201703161541)' severity='0'/>
+  <unit id='com.sii.rental.feature.feature.group' version='1.0.0.201703161612' singleton='false'>
+    <update id='com.sii.rental.feature.feature.group' range='[0.0.0,1.0.0.201703161612)' severity='0'/>
     <properties size='8'>
       <property name='org.eclipse.equinox.p2.name' value='Rental application'/>
       <property name='org.eclipse.equinox.p2.description' value='[Enter Feature Description here.]'/>
@@ -13,7 +13,7 @@
       <property name='maven-version' value='1.0.0-SNAPSHOT'/>
     </properties>
     <provides size='1'>
-      <provided namespace='org.eclipse.equinox.p2.iu' name='com.sii.rental.feature.feature.group' version='1.0.0.201703161541'/>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='com.sii.rental.feature.feature.group' version='1.0.0.201703161612'/>
     </provides>
     <requires size='25'>
       <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.core.runtime' range='0.0.0'/>
@@ -37,10 +37,10 @@
       <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.e4.core.di.extensions' range='0.14.0'/>
       <required namespace='org.eclipse.equinox.p2.iu' name='org.eclipse.e4.core.services' range='0.0.0'/>
       <required namespace='org.eclipse.equinox.p2.iu' name='javax.annotation' range='0.0.0'/>
-      <required namespace='org.eclipse.equinox.p2.iu' name='com.sii.rental.core' range='[1.0.0.201703161539,1.0.0.201703161539]'/>
-      <required namespace='org.eclipse.equinox.p2.iu' name='com.sii.rental.eap' range='[1.0.0.201703161539,1.0.0.201703161539]'/>
-      <required namespace='org.eclipse.equinox.p2.iu' name='com.sii.rental.ui' range='[1.0.0.201703161539,1.0.0.201703161539]'/>
-      <required namespace='org.eclipse.equinox.p2.iu' name='com.sii.rental.feature.feature.jar' range='[1.0.0.201703161541,1.0.0.201703161541]'>
+      <required namespace='org.eclipse.equinox.p2.iu' name='com.sii.rental.core' range='[1.0.0.201703161612,1.0.0.201703161612]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='com.sii.rental.eap' range='[1.0.0.201703161612,1.0.0.201703161612]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='com.sii.rental.ui' range='[1.0.0.201703161612,1.0.0.201703161612]'/>
+      <required namespace='org.eclipse.equinox.p2.iu' name='com.sii.rental.feature.feature.jar' range='[1.0.0.201703161612,1.0.0.201703161612]'>
         <filter>
           (org.eclipse.update.install.features=true)
         </filter>
@@ -56,7 +56,7 @@
       [Enter Copyright Description here.]
     </copyright>
   </unit>
-  <unit id='com.sii.rental.feature.feature.jar' version='1.0.0.201703161541'>
+  <unit id='com.sii.rental.feature.feature.jar' version='1.0.0.201703161612'>
     <properties size='7'>
       <property name='org.eclipse.equinox.p2.name' value='Rental application'/>
       <property name='org.eclipse.equinox.p2.description' value='[Enter Feature Description here.]'/>
@@ -67,15 +67,15 @@
       <property name='maven-version' value='1.0.0-SNAPSHOT'/>
     </properties>
     <provides size='3'>
-      <provided namespace='org.eclipse.equinox.p2.iu' name='com.sii.rental.feature.feature.jar' version='1.0.0.201703161541'/>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='com.sii.rental.feature.feature.jar' version='1.0.0.201703161612'/>
       <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
-      <provided namespace='org.eclipse.update.feature' name='com.sii.rental.feature' version='1.0.0.201703161541'/>
+      <provided namespace='org.eclipse.update.feature' name='com.sii.rental.feature' version='1.0.0.201703161612'/>
     </provides>
     <filter>
       (org.eclipse.update.install.features=true)
     </filter>
     <artifacts size='1'>
-      <artifact classifier='org.eclipse.update.feature' id='com.sii.rental.feature' version='1.0.0.201703161541'/>
+      <artifact classifier='org.eclipse.update.feature' id='com.sii.rental.feature' version='1.0.0.201703161612'/>
     </artifacts>
     <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
     <touchpointData size='1'>

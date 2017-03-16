@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-SymbolicName: com.sii.rental.core;singleton:=true
 Export-Package: com.opcoach.training.rental,com.sii.rental.core
 Bundle-Name: Core
-Bundle-Version: 1.0.0.201703161539
+Bundle-Version: 1.0.0.201703161612
 Bundle-ClassPath: rental.jar,.
 Require-Bundle: org.eclipse.core.runtime,org.eclipse.emf.ecore,org.ecl
  ipse.core.expressions

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?artifactRepository version='1.1.0'?>
 <artifacts size='1'>
-  <artifact classifier='osgi.bundle' id='com.sii.rental.eap' version='1.0.0.201703161539'>
+  <artifact classifier='osgi.bundle' id='com.sii.rental.eap' version='1.0.0.201703161612'>
     <properties size='5'>
       <property name='artifact.size' value='15251'/>
       <property name='download.size' value='15251'/>

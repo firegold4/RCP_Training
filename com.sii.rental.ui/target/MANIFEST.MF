@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-SymbolicName: com.sii.rental.ui;singleton:=true
 Export-Package: com.sii.rental.ui,com.sii.rental.ui.views
 Bundle-Name: Ui
-Bundle-Version: 1.0.0.201703161539
+Bundle-Version: 1.0.0.201703161612
 Require-Bundle: org.eclipse.core.runtime,com.sii.rental.core;bundle-ve
  rsion="1.0.0",org.eclipse.jface,org.eclipse.e4.ui.di,org.eclipse.emf.
  common;bundle-version="2.13.0",org.eclipse.e4.core.contexts,org.eclip
