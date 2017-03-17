@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Game Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see com.sii.gametournament.GametournamentPackage#getGameType()
+ * @see com.sii.gametournament.MGametournamentPackage#getGameType()
  * @model
  * @generated
  */

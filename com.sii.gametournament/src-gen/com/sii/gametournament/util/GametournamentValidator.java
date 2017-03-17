@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.util.EObjectValidator;
  * <!-- begin-user-doc -->
  * The <b>Validator</b> for the model.
  * <!-- end-user-doc -->
- * @see com.sii.gametournament.GametournamentPackage
+ * @see com.sii.gametournament.MGametournamentPackage
  * @generated
  */
 public class GametournamentValidator extends EObjectValidator {
@@ -74,7 +74,7 @@ public class GametournamentValidator extends EObjectValidator {
 	 */
 	@Override
 	protected EPackage getEPackage() {
-	  return GametournamentPackage.eINSTANCE;
+	  return MGametournamentPackage.eINSTANCE;
 	}
 
 	/**
@@ -86,19 +86,19 @@ public class GametournamentValidator extends EObjectValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
-			case GametournamentPackage.TOURNAMENT:
-				return validateTournament((Tournament)value, diagnostics, context);
-			case GametournamentPackage.GAMER:
-				return validateGamer((Gamer)value, diagnostics, context);
-			case GametournamentPackage.GAME:
-				return validateGame((Game)value, diagnostics, context);
-			case GametournamentPackage.QUALIFICATION_PHASE:
-				return validateQualificationPhase((QualificationPhase)value, diagnostics, context);
-			case GametournamentPackage.FINAL_PHASE:
-				return validateFinalPhase((FinalPhase)value, diagnostics, context);
-			case GametournamentPackage.POOL:
-				return validatePool((Pool)value, diagnostics, context);
-			case GametournamentPackage.GAME_TYPE:
+			case MGametournamentPackage.TOURNAMENT:
+				return validateTournament((MTournament)value, diagnostics, context);
+			case MGametournamentPackage.GAMER:
+				return validateGamer((MGamer)value, diagnostics, context);
+			case MGametournamentPackage.GAME:
+				return validateGame((MGame)value, diagnostics, context);
+			case MGametournamentPackage.QUALIFICATION_PHASE:
+				return validateQualificationPhase((MQualificationPhase)value, diagnostics, context);
+			case MGametournamentPackage.FINAL_PHASE:
+				return validateFinalPhase((MFinalPhase)value, diagnostics, context);
+			case MGametournamentPackage.POOL:
+				return validatePool((MPool)value, diagnostics, context);
+			case MGametournamentPackage.GAME_TYPE:
 				return validateGameType((GameType)value, diagnostics, context);
 			default:
 				return true;
@@ -110,7 +110,7 @@ public class GametournamentValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateTournament(Tournament tournament, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateTournament(MTournament tournament, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!validate_NoCircularContainment(tournament, diagnostics, context)) return false;
 		boolean result = validate_EveryMultiplicityConforms(tournament, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(tournament, diagnostics, context);
@@ -128,14 +128,14 @@ public class GametournamentValidator extends EObjectValidator {
 	 * Validates the checkName constraint of '<em>Tournament</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
-	public boolean validateTournament_checkName(Tournament tournament, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateTournament_checkName(MTournament tournament, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO implement the constraint
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (tournament.getName().startsWith("A")) {
+		if (false) {
 			if (diagnostics != null) {
 				diagnostics.add
 					(createDiagnostic
@@ -157,7 +157,7 @@ public class GametournamentValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateGamer(Gamer gamer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateGamer(MGamer gamer, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(gamer, diagnostics, context);
 	}
 
@@ -166,7 +166,7 @@ public class GametournamentValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateGame(Game game, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateGame(MGame game, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(game, diagnostics, context);
 	}
 
@@ -175,7 +175,7 @@ public class GametournamentValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateQualificationPhase(QualificationPhase qualificationPhase, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateQualificationPhase(MQualificationPhase qualificationPhase, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(qualificationPhase, diagnostics, context);
 	}
 
@@ -184,7 +184,7 @@ public class GametournamentValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateFinalPhase(FinalPhase finalPhase, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateFinalPhase(MFinalPhase finalPhase, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(finalPhase, diagnostics, context);
 	}
 
@@ -193,7 +193,7 @@ public class GametournamentValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePool(Pool pool, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validatePool(MPool pool, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(pool, diagnostics, context);
 	}
 

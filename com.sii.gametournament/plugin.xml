@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.0"?>
-
-<!--
--->
-
 <plugin>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated gametournament -->
+   <extension
+         point="org.eclipse.emf.ecore.factory_override">
+      <factory
+            uri="http://com.sii/gametournament/1.0"
+            class="com.sii.gametournament.impl.GametournamentFactoryImpl">
+      </factory>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://com.sii/gametournament/1.0"
-            class="com.sii.gametournament.GametournamentPackage"
-            genModel="model/gametournament.genmodel"/>
+            class="com.sii.gametournament.MGametournamentPackage">
+      </package>
    </extension>
 
 </plugin>

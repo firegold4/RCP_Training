@@ -69,8 +69,8 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ISetSelectionTarget;
 
-import com.sii.gametournament.GametournamentFactory;
-import com.sii.gametournament.GametournamentPackage;
+import com.sii.gametournament.MGametournamentFactory;
+import com.sii.gametournament.MGametournamentPackage;
 import com.sii.gametournament.provider.GametournamentEditPlugin;
 
 
@@ -116,7 +116,7 @@ public class GametournamentModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected GametournamentPackage gametournamentPackage = GametournamentPackage.eINSTANCE;
+	protected MGametournamentPackage gametournamentPackage = MGametournamentPackage.eINSTANCE;
 
 	/**
 	 * This caches an instance of the model factory.
@@ -124,7 +124,7 @@ public class GametournamentModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected GametournamentFactory gametournamentFactory = gametournamentPackage.getGametournamentFactory();
+	protected MGametournamentFactory gametournamentFactory = gametournamentPackage.getGametournamentFactory();
 
 	/**
 	 * This is the file creation page.

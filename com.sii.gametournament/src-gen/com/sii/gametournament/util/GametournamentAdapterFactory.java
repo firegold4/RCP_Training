@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see com.sii.gametournament.GametournamentPackage
+ * @see com.sii.gametournament.MGametournamentPackage
  * @generated
  */
 public class GametournamentAdapterFactory extends AdapterFactoryImpl {
@@ -26,7 +26,7 @@ public class GametournamentAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static GametournamentPackage modelPackage;
+	protected static MGametournamentPackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -36,7 +36,7 @@ public class GametournamentAdapterFactory extends AdapterFactoryImpl {
 	 */
 	public GametournamentAdapterFactory() {
 		if (modelPackage == null) {
-			modelPackage = GametournamentPackage.eINSTANCE;
+			modelPackage = MGametournamentPackage.eINSTANCE;
 		}
 	}
 
@@ -68,27 +68,27 @@ public class GametournamentAdapterFactory extends AdapterFactoryImpl {
 	protected GametournamentSwitch<Adapter> modelSwitch =
 		new GametournamentSwitch<Adapter>() {
 			@Override
-			public Adapter caseTournament(Tournament object) {
+			public Adapter caseTournament(MTournament object) {
 				return createTournamentAdapter();
 			}
 			@Override
-			public Adapter caseGamer(Gamer object) {
+			public Adapter caseGamer(MGamer object) {
 				return createGamerAdapter();
 			}
 			@Override
-			public Adapter caseGame(Game object) {
+			public Adapter caseGame(MGame object) {
 				return createGameAdapter();
 			}
 			@Override
-			public Adapter caseQualificationPhase(QualificationPhase object) {
+			public Adapter caseQualificationPhase(MQualificationPhase object) {
 				return createQualificationPhaseAdapter();
 			}
 			@Override
-			public Adapter caseFinalPhase(FinalPhase object) {
+			public Adapter caseFinalPhase(MFinalPhase object) {
 				return createFinalPhaseAdapter();
 			}
 			@Override
-			public Adapter casePool(Pool object) {
+			public Adapter casePool(MPool object) {
 				return createPoolAdapter();
 			}
 			@Override
@@ -112,13 +112,13 @@ public class GametournamentAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.sii.gametournament.Tournament <em>Tournament</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.sii.gametournament.MTournament <em>Tournament</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.sii.gametournament.Tournament
+	 * @see com.sii.gametournament.MTournament
 	 * @generated
 	 */
 	public Adapter createTournamentAdapter() {
@@ -126,13 +126,13 @@ public class GametournamentAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.sii.gametournament.Gamer <em>Gamer</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.sii.gametournament.MGamer <em>Gamer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.sii.gametournament.Gamer
+	 * @see com.sii.gametournament.MGamer
 	 * @generated
 	 */
 	public Adapter createGamerAdapter() {
@@ -140,13 +140,13 @@ public class GametournamentAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.sii.gametournament.Game <em>Game</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.sii.gametournament.MGame <em>Game</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.sii.gametournament.Game
+	 * @see com.sii.gametournament.MGame
 	 * @generated
 	 */
 	public Adapter createGameAdapter() {
@@ -154,13 +154,13 @@ public class GametournamentAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.sii.gametournament.QualificationPhase <em>Qualification Phase</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.sii.gametournament.MQualificationPhase <em>Qualification Phase</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.sii.gametournament.QualificationPhase
+	 * @see com.sii.gametournament.MQualificationPhase
 	 * @generated
 	 */
 	public Adapter createQualificationPhaseAdapter() {
@@ -168,13 +168,13 @@ public class GametournamentAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.sii.gametournament.FinalPhase <em>Final Phase</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.sii.gametournament.MFinalPhase <em>Final Phase</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.sii.gametournament.FinalPhase
+	 * @see com.sii.gametournament.MFinalPhase
 	 * @generated
 	 */
 	public Adapter createFinalPhaseAdapter() {
@@ -182,13 +182,13 @@ public class GametournamentAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.sii.gametournament.Pool <em>Pool</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.sii.gametournament.MPool <em>Pool</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.sii.gametournament.Pool
+	 * @see com.sii.gametournament.MPool
 	 * @generated
 	 */
 	public Adapter createPoolAdapter() {

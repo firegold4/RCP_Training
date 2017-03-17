@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.util.Switch;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see com.sii.gametournament.GametournamentPackage
+ * @see com.sii.gametournament.MGametournamentPackage
  * @generated
  */
 public class GametournamentSwitch<T> extends Switch<T> {
@@ -29,7 +29,7 @@ public class GametournamentSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static GametournamentPackage modelPackage;
+	protected static MGametournamentPackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch.
@@ -39,7 +39,7 @@ public class GametournamentSwitch<T> extends Switch<T> {
 	 */
 	public GametournamentSwitch() {
 		if (modelPackage == null) {
-			modelPackage = GametournamentPackage.eINSTANCE;
+			modelPackage = MGametournamentPackage.eINSTANCE;
 		}
 	}
 
@@ -66,38 +66,38 @@ public class GametournamentSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case GametournamentPackage.TOURNAMENT: {
-				Tournament tournament = (Tournament)theEObject;
+			case MGametournamentPackage.TOURNAMENT: {
+				MTournament tournament = (MTournament)theEObject;
 				T result = caseTournament(tournament);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GametournamentPackage.GAMER: {
-				Gamer gamer = (Gamer)theEObject;
+			case MGametournamentPackage.GAMER: {
+				MGamer gamer = (MGamer)theEObject;
 				T result = caseGamer(gamer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GametournamentPackage.GAME: {
-				Game game = (Game)theEObject;
+			case MGametournamentPackage.GAME: {
+				MGame game = (MGame)theEObject;
 				T result = caseGame(game);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GametournamentPackage.QUALIFICATION_PHASE: {
-				QualificationPhase qualificationPhase = (QualificationPhase)theEObject;
+			case MGametournamentPackage.QUALIFICATION_PHASE: {
+				MQualificationPhase qualificationPhase = (MQualificationPhase)theEObject;
 				T result = caseQualificationPhase(qualificationPhase);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GametournamentPackage.FINAL_PHASE: {
-				FinalPhase finalPhase = (FinalPhase)theEObject;
+			case MGametournamentPackage.FINAL_PHASE: {
+				MFinalPhase finalPhase = (MFinalPhase)theEObject;
 				T result = caseFinalPhase(finalPhase);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GametournamentPackage.POOL: {
-				Pool pool = (Pool)theEObject;
+			case MGametournamentPackage.POOL: {
+				MPool pool = (MPool)theEObject;
 				T result = casePool(pool);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -117,7 +117,7 @@ public class GametournamentSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTournament(Tournament object) {
+	public T caseTournament(MTournament object) {
 		return null;
 	}
 
@@ -132,7 +132,7 @@ public class GametournamentSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseGamer(Gamer object) {
+	public T caseGamer(MGamer object) {
 		return null;
 	}
 
@@ -147,7 +147,7 @@ public class GametournamentSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseGame(Game object) {
+	public T caseGame(MGame object) {
 		return null;
 	}
 
@@ -162,7 +162,7 @@ public class GametournamentSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseQualificationPhase(QualificationPhase object) {
+	public T caseQualificationPhase(MQualificationPhase object) {
 		return null;
 	}
 
@@ -177,7 +177,7 @@ public class GametournamentSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseFinalPhase(FinalPhase object) {
+	public T caseFinalPhase(MFinalPhase object) {
 		return null;
 	}
 
@@ -192,7 +192,7 @@ public class GametournamentSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePool(Pool object) {
+	public T casePool(MPool object) {
 		return null;
 	}
 

@@ -2,25 +2,26 @@
  */
 package com.sii.gametournament.impl;
 
-import com.sii.gametournament.FinalPhase;
-import com.sii.gametournament.Game;
 import com.sii.gametournament.GameType;
-import com.sii.gametournament.Gamer;
-import com.sii.gametournament.GametournamentFactory;
-import com.sii.gametournament.GametournamentPackage;
-import com.sii.gametournament.Pool;
-import com.sii.gametournament.QualificationPhase;
-import com.sii.gametournament.Tournament;
+import com.sii.gametournament.MFinalPhase;
+import com.sii.gametournament.MGame;
+import com.sii.gametournament.MGamer;
+import com.sii.gametournament.MGametournamentFactory;
+import com.sii.gametournament.MGametournamentPackage;
+import com.sii.gametournament.MPool;
+import com.sii.gametournament.MQualificationPhase;
+import com.sii.gametournament.MTournament;
 
 import com.sii.gametournament.util.GametournamentValidator;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.EValidator;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -29,7 +30,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class GametournamentPackageImpl extends EPackageImpl implements GametournamentPackage {
+public class MGametournamentPackageImpl extends EPackageImpl implements MGametournamentPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -90,12 +91,12 @@ public class GametournamentPackageImpl extends EPackageImpl implements Gametourn
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see com.sii.gametournament.GametournamentPackage#eNS_URI
+	 * @see com.sii.gametournament.MGametournamentPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private GametournamentPackageImpl() {
-		super(eNS_URI, GametournamentFactory.eINSTANCE);
+	private MGametournamentPackageImpl() {
+		super(eNS_URI, MGametournamentFactory.eINSTANCE);
 	}
 
 	/**
@@ -108,7 +109,7 @@ public class GametournamentPackageImpl extends EPackageImpl implements Gametourn
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
-	 * <p>This method is used to initialize {@link GametournamentPackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link MGametournamentPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -117,11 +118,11 @@ public class GametournamentPackageImpl extends EPackageImpl implements Gametourn
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static GametournamentPackage init() {
-		if (isInited) return (GametournamentPackage)EPackage.Registry.INSTANCE.getEPackage(GametournamentPackage.eNS_URI);
+	public static MGametournamentPackage init() {
+		if (isInited) return (MGametournamentPackage)EPackage.Registry.INSTANCE.getEPackage(MGametournamentPackage.eNS_URI);
 
 		// Obtain or create and register package
-		GametournamentPackageImpl theGametournamentPackage = (GametournamentPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof GametournamentPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new GametournamentPackageImpl());
+		MGametournamentPackageImpl theGametournamentPackage = (MGametournamentPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof MGametournamentPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new MGametournamentPackageImpl());
 
 		isInited = true;
 
@@ -145,7 +146,7 @@ public class GametournamentPackageImpl extends EPackageImpl implements Gametourn
 
   
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(GametournamentPackage.eNS_URI, theGametournamentPackage);
+		EPackage.Registry.INSTANCE.put(MGametournamentPackage.eNS_URI, theGametournamentPackage);
 		return theGametournamentPackage;
 	}
 
@@ -424,8 +425,8 @@ public class GametournamentPackageImpl extends EPackageImpl implements Gametourn
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GametournamentFactory getGametournamentFactory() {
-		return (GametournamentFactory)getEFactoryInstance();
+	public MGametournamentFactory getGametournamentFactory() {
+		return (MGametournamentFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -516,40 +517,40 @@ public class GametournamentPackageImpl extends EPackageImpl implements Gametourn
 		// Add supertypes to classes
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(tournamentEClass, Tournament.class, "Tournament", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTournament_Name(), ecorePackage.getEString(), "name", null, 1, 1, Tournament.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTournament_Location(), ecorePackage.getEString(), "location", null, 1, 1, Tournament.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTournament_StartDate(), ecorePackage.getEDate(), "startDate", null, 1, 1, Tournament.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTournament_EndDate(), ecorePackage.getEDate(), "endDate", null, 1, 1, Tournament.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTournament_Game(), this.getGame(), null, "game", null, 1, 1, Tournament.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTournament_Gamers(), this.getGamer(), null, "gamers", null, 0, -1, Tournament.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTournament_FinalPhase(), this.getFinalPhase(), null, "finalPhase", null, 1, 1, Tournament.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTournament_QualificationPhase(), this.getQualificationPhase(), null, "qualificationPhase", null, 1, 1, Tournament.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTournament_Prize(), ecorePackage.getEInt(), "prize", null, 1, 1, Tournament.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(tournamentEClass, MTournament.class, "Tournament", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTournament_Name(), ecorePackage.getEString(), "name", null, 1, 1, MTournament.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTournament_Location(), ecorePackage.getEString(), "location", null, 1, 1, MTournament.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTournament_StartDate(), ecorePackage.getEDate(), "startDate", null, 1, 1, MTournament.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTournament_EndDate(), ecorePackage.getEDate(), "endDate", null, 1, 1, MTournament.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTournament_Game(), this.getGame(), null, "game", null, 1, 1, MTournament.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTournament_Gamers(), this.getGamer(), null, "gamers", null, 0, -1, MTournament.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTournament_FinalPhase(), this.getFinalPhase(), null, "finalPhase", null, 1, 1, MTournament.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTournament_QualificationPhase(), this.getQualificationPhase(), null, "qualificationPhase", null, 1, 1, MTournament.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTournament_Prize(), ecorePackage.getEInt(), "prize", null, 1, 1, MTournament.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(gamerEClass, Gamer.class, "Gamer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGamer_FirstName(), ecorePackage.getEString(), "firstName", null, 1, 1, Gamer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGamer_LastName(), ecorePackage.getEString(), "lastName", null, 1, 1, Gamer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGamer_Pseudo(), ecorePackage.getEString(), "pseudo", null, 0, 1, Gamer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGamer_Victories(), ecorePackage.getEInt(), "victories", null, 0, 1, Gamer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGamer_Matches(), ecorePackage.getEInt(), "matches", null, 0, 1, Gamer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(gamerEClass, MGamer.class, "Gamer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getGamer_FirstName(), ecorePackage.getEString(), "firstName", null, 1, 1, MGamer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGamer_LastName(), ecorePackage.getEString(), "lastName", null, 1, 1, MGamer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGamer_Pseudo(), ecorePackage.getEString(), "pseudo", null, 0, 1, MGamer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGamer_Victories(), ecorePackage.getEInt(), "victories", null, 0, 1, MGamer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGamer_Matches(), ecorePackage.getEInt(), "matches", null, 0, 1, MGamer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(gameEClass, Game.class, "Game", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGame_Name(), ecorePackage.getEString(), "name", null, 1, 1, Game.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGame_Type(), this.getGameType(), "type", null, 1, 1, Game.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(gameEClass, MGame.class, "Game", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getGame_Name(), ecorePackage.getEString(), "name", null, 1, 1, MGame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGame_Type(), this.getGameType(), "type", null, 1, 1, MGame.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(qualificationPhaseEClass, QualificationPhase.class, "QualificationPhase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getQualificationPhase_Pools(), this.getPool(), null, "pools", null, 1, 16, QualificationPhase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(qualificationPhaseEClass, MQualificationPhase.class, "QualificationPhase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getQualificationPhase_Pools(), this.getPool(), null, "pools", null, 1, 16, MQualificationPhase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getQualificationPhase__CreatePools(), this.getPool(), "createPools", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(finalPhaseEClass, FinalPhase.class, "FinalPhase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFinalPhase_Finalists(), this.getGamer(), null, "finalists", null, 1, 16, FinalPhase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFinalPhase_Qualificationphase(), this.getQualificationPhase(), null, "qualificationphase", null, 1, 1, FinalPhase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(finalPhaseEClass, MFinalPhase.class, "FinalPhase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFinalPhase_Finalists(), this.getGamer(), null, "finalists", null, 1, 16, MFinalPhase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFinalPhase_Qualificationphase(), this.getQualificationPhase(), null, "qualificationphase", null, 1, 1, MFinalPhase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(poolEClass, Pool.class, "Pool", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPool_Participants(), this.getGamer(), null, "participants", null, 4, 4, Pool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPool_Classment(), this.getGamer(), null, "classment", null, 4, 4, Pool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(poolEClass, MPool.class, "Pool", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPool_Participants(), this.getGamer(), null, "participants", null, 4, 4, MPool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPool_Classment(), this.getGamer(), null, "classment", null, 4, 4, MPool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getPool__GenerateClassment(), null, "generateClassment", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -585,4 +586,4 @@ public class GametournamentPackageImpl extends EPackageImpl implements Gametourn
 		   });
 	}
 
-} //GametournamentPackageImpl
+} //MGametournamentPackageImpl
