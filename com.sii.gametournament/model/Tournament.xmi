@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gametournament:Tournament
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gametournament="http://com.sii/gametournament/1.0"
+    xsi:schemaLocation="http://com.sii/gametournament/1.0 gametournament.ecore"
+    name="Paris Games Week"
+    location="Paris"
+    startDate="2017-03-13T09:00:00.000+0100"
+    endDate="2017-03-17T20:00:00.000+0100"
+    prize="5000">
+  <game name="Halo"
+      type="FPS"/>
+  <gamers firstName="Alexandre"
+      lastName="Cheveau"
+      pseudo="LeMollusque"/>
+  <gamers firstName="Francois"
+      lastName="Laguaise"
+      pseudo="Boubou"/>
+  <gamers firstName="David"
+      lastName="Bordeaux"/>
+  <gamers firstName="Olivier"
+      lastName="Prouvost"/>
+  <finalPhase
+      qualificationphase="//@qualificationPhase">
+    <finalists
+        firstName=""/>
+  </finalPhase>
+  <qualificationPhase>
+    <pools classment="//@gamers.0 //@gamers.1 //@gamers.2 //@gamers.3"/>
+  </qualificationPhase>
+</gametournament:Tournament>
