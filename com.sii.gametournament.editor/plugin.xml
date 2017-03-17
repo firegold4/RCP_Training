@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated gametournament -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="com.sii.gametournament.presentation.GametournamentModelWizardID"
+            name="%_UI_GametournamentModelWizard_label"
+            class="com.sii.gametournament.presentation.GametournamentModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/GametournamentModelFile.gif">
+         <description>%_UI_GametournamentModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated gametournament -->
+      <editor
+            id="com.sii.gametournament.presentation.GametournamentEditorID"
+            name="%_UI_GametournamentEditor_label"
+            icon="icons/full/obj16/GametournamentModelFile.gif"
+            extensions="gametournament"
+            class="com.sii.gametournament.presentation.GametournamentEditor"
+            contributorClass="com.sii.gametournament.presentation.GametournamentActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
